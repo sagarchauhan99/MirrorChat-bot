@@ -285,4 +285,13 @@
       display: none;
       visibility: hidden;
     }
+
+    ::ng-deep .mat-dialog-container{
+      width: 100%;
+    }
+  }
+
+  ::ng-deep .mat-dialog-container{
+    width: auto;
+    max-width: auto;
   }

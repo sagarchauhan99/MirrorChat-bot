@@ -1,5 +1,11 @@
-
-<h2 mat-dialog-title>Start Chatting!</h2>
+<div class="chatbox">
+ <span class="header"><img
+  width="50"
+  style="border-radius: 50%;width: 50px;height: 50px;"
+  alt="bot Logo"
+  src="https://media.istockphoto.com/vectors/chat-bot-ai-and-customer-service-support-concept-vector-flat-person-vector-id1221348467?k=20&m=1221348467&s=612x612&w=0&h=hp8h8MuGL7Ay-mxkmIKUsk3RY4O69MuiWjznS_7cCBw="
+  ><h2 mat-dialog-title >Chat Screen!</h2>
+</span>
 <mat-dialog-content class="mat-typography">
   
     <ng-container *ngFor="let message of messages">
@@ -9,12 +15,13 @@
         {{ message.content }}
         </div>
         </ng-container>
-        <label *ngIf="messages.length == 0" for="nameField">Let's Start Chatting!!</label>
+        <label style="color: white;" *ngIf="messages.length == 0" for="nameField">Let's start chatting!!</label>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-  <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text">  
-  <button mat-button (click)="sendMessage()" cdkFocusInitial>Send</button>
-  <button mat-button mat-dialog-close>Close</button>
+<mat-dialog-actions align="start">
+  <input class="input" [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text">  
+  <button mat-raised-button color="primary" class="btn" (click)="sendMessage()" cdkFocusInitial>Send</button>
+  <button mat-raised-button class="btn close" mat-dialog-close>Close</button>
 </mat-dialog-actions>
+</div>
 
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ChatService } from './chat.service';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 
 @Component({
@@ -10,10 +11,13 @@ import { ChatboxComponent } from './chatbox/chatbox.component';
 export class AppComponent {
   title = 'chat-bot';
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+        public matdialog: MatDialog,
+        public dialog:ChatService
+        ) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(ChatboxComponent);
+    const dialogRef = this.matdialog.open(ChatboxComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
